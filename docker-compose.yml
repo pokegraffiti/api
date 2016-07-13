@@ -1,0 +1,14 @@
+# Development
+#  Passwords are for merly for seperation of development environments, not security.
+postgres:
+  image: postgres
+  environment:
+    - POSTGRES_USER=5c068f13e
+    - POSTGRES_PASSWORD=5c068f13e
+  ports:
+    - "5432:5432"
+# redis:
+#   image: redis
+#   command: redis-server --requirepass 5c068f13e
+#   ports:
+#     - "6379:6379"
