@@ -1,0 +1,340 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.stripe.com/v1/tokens
+    body:
+      encoding: UTF-8
+      string: card[cvc]=314&card[exp_month]=7&card[exp_year]=2017&card[number]=4242424242424242
+    headers:
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Stripe/v1 RubyBindings/1.48.0
+      Authorization:
+      - Bearer STRIPE_SECRET_KEY
+      Content-Type:
+      - application/x-www-form-urlencoded
+      X-Stripe-Client-User-Agent:
+      - '{"bindings_version":"1.48.0","lang":"ruby","lang_version":"2.3.1 p112 (2016-04-26)","platform":"x86_64-darwin15","engine":"ruby","publisher":"stripe","uname":"Darwin
+        Shadow-Cat.local 15.5.0 Darwin Kernel Version 15.5.0: Tue Apr 19 18:36:36
+        PDT 2016; root:xnu-3248.50.21~8/RELEASE_X86_64 x86_64","hostname":"Shadow-Cat.local"}'
+      Content-Length:
+      - '81'
+      Host:
+      - api.stripe.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Wed, 13 Jul 2016 10:49:06 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '779'
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Methods:
+      - GET, POST, HEAD, OPTIONS, DELETE
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Max-Age:
+      - '300'
+      Cache-Control:
+      - no-cache, no-store
+      Request-Id:
+      - req_8oNgjmE9xXEKaQ
+      Stripe-Version:
+      - '2016-07-06'
+      Strict-Transport-Security:
+      - max-age=31556926; includeSubDomains
+    body:
+      encoding: UTF-8
+      string: |
+        {
+          "id": "tok_18WkvO4AnjI1zHWBOem9Dcfn",
+          "object": "token",
+          "card": {
+            "id": "card_18WkvO4AnjI1zHWBUbkEbVbc",
+            "object": "card",
+            "address_city": null,
+            "address_country": null,
+            "address_line1": null,
+            "address_line1_check": null,
+            "address_line2": null,
+            "address_state": null,
+            "address_zip": null,
+            "address_zip_check": null,
+            "brand": "Visa",
+            "country": "US",
+            "cvc_check": "unchecked",
+            "dynamic_last4": null,
+            "exp_month": 7,
+            "exp_year": 2017,
+            "fingerprint": "GuemeI8uOeJZ5eck",
+            "funding": "credit",
+            "last4": "4242",
+            "metadata": {},
+            "name": null,
+            "tokenization_method": null
+          },
+          "client_ip": "50.131.61.23",
+          "created": 1468406946,
+          "livemode": false,
+          "type": "card",
+          "used": false
+        }
+    http_version: 
+  recorded_at: Wed, 13 Jul 2016 10:49:05 GMT
+- request:
+    method: post
+    uri: https://api.stripe.com/v1/customers
+    body:
+      encoding: UTF-8
+      string: email=raul_considine%40leannonglover.co&source=tok_18WkvO4AnjI1zHWBOem9Dcfn
+    headers:
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Stripe/v1 RubyBindings/1.48.0
+      Authorization:
+      - Bearer STRIPE_SECRET_KEY
+      Content-Type:
+      - application/x-www-form-urlencoded
+      X-Stripe-Client-User-Agent:
+      - '{"bindings_version":"1.48.0","lang":"ruby","lang_version":"2.3.1 p112 (2016-04-26)","platform":"x86_64-darwin15","engine":"ruby","publisher":"stripe","uname":"Darwin
+        Shadow-Cat.local 15.5.0 Darwin Kernel Version 15.5.0: Tue Apr 19 18:36:36
+        PDT 2016; root:xnu-3248.50.21~8/RELEASE_X86_64 x86_64","hostname":"Shadow-Cat.local"}'
+      Content-Length:
+      - '75'
+      Host:
+      - api.stripe.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Wed, 13 Jul 2016 10:49:06 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '1408'
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Methods:
+      - GET, POST, HEAD, OPTIONS, DELETE
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Max-Age:
+      - '300'
+      Cache-Control:
+      - no-cache, no-store
+      Request-Id:
+      - req_8oNgvPD2y5U6Bv
+      Stripe-Version:
+      - '2016-07-06'
+      Strict-Transport-Security:
+      - max-age=31556926; includeSubDomains
+    body:
+      encoding: UTF-8
+      string: |
+        {
+          "id": "cus_8oNgTDxdx0WJGN",
+          "object": "customer",
+          "account_balance": 0,
+          "created": 1468406946,
+          "currency": null,
+          "default_source": "card_18WkvO4AnjI1zHWBUbkEbVbc",
+          "delinquent": false,
+          "description": null,
+          "discount": null,
+          "email": "raul_considine@leannonglover.co",
+          "livemode": false,
+          "metadata": {},
+          "shipping": null,
+          "sources": {
+            "object": "list",
+            "data": [
+              {
+                "id": "card_18WkvO4AnjI1zHWBUbkEbVbc",
+                "object": "card",
+                "address_city": null,
+                "address_country": null,
+                "address_line1": null,
+                "address_line1_check": null,
+                "address_line2": null,
+                "address_state": null,
+                "address_zip": null,
+                "address_zip_check": null,
+                "brand": "Visa",
+                "country": "US",
+                "customer": "cus_8oNgTDxdx0WJGN",
+                "cvc_check": "pass",
+                "dynamic_last4": null,
+                "exp_month": 7,
+                "exp_year": 2017,
+                "fingerprint": "GuemeI8uOeJZ5eck",
+                "funding": "credit",
+                "last4": "4242",
+                "metadata": {},
+                "name": null,
+                "tokenization_method": null
+              }
+            ],
+            "has_more": false,
+            "total_count": 1,
+            "url": "/v1/customers/cus_8oNgTDxdx0WJGN/sources"
+          },
+          "subscriptions": {
+            "object": "list",
+            "data": [],
+            "has_more": false,
+            "total_count": 0,
+            "url": "/v1/customers/cus_8oNgTDxdx0WJGN/subscriptions"
+          }
+        }
+    http_version: 
+  recorded_at: Wed, 13 Jul 2016 10:49:05 GMT
+- request:
+    method: post
+    uri: https://api.stripe.com/v1/charges
+    body:
+      encoding: UTF-8
+      string: amount=500&capture=false&currency=usd&customer=cus_8oNgTDxdx0WJGN&description=5+Team+Valor+Die+Cut+Sticker&metadata[email]=raul_considine%40leannonglover.co&metadata[sticker_quantity]=5&metadata[sticker_type]=valor&receipt_email=raul_considine%40leannonglover.co&statement_descriptor=Team+Valor+Stickers
+    headers:
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Stripe/v1 RubyBindings/1.48.0
+      Authorization:
+      - Bearer STRIPE_SECRET_KEY
+      Content-Type:
+      - application/x-www-form-urlencoded
+      X-Stripe-Client-User-Agent:
+      - '{"bindings_version":"1.48.0","lang":"ruby","lang_version":"2.3.1 p112 (2016-04-26)","platform":"x86_64-darwin15","engine":"ruby","publisher":"stripe","uname":"Darwin
+        Shadow-Cat.local 15.5.0 Darwin Kernel Version 15.5.0: Tue Apr 19 18:36:36
+        PDT 2016; root:xnu-3248.50.21~8/RELEASE_X86_64 x86_64","hostname":"Shadow-Cat.local"}'
+      Content-Length:
+      - '303'
+      Host:
+      - api.stripe.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Wed, 13 Jul 2016 10:49:07 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '1654'
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Methods:
+      - GET, POST, HEAD, OPTIONS, DELETE
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Max-Age:
+      - '300'
+      Cache-Control:
+      - no-cache, no-store
+      Request-Id:
+      - req_8oNgJ4D3F5nblx
+      Stripe-Version:
+      - '2016-07-06'
+      Strict-Transport-Security:
+      - max-age=31556926; includeSubDomains
+    body:
+      encoding: UTF-8
+      string: |
+        {
+          "id": "ch_18WkvP4AnjI1zHWBF2cMs2Dl",
+          "object": "charge",
+          "amount": 500,
+          "amount_refunded": 0,
+          "application_fee": null,
+          "balance_transaction": null,
+          "captured": false,
+          "created": 1468406947,
+          "currency": "usd",
+          "customer": "cus_8oNgTDxdx0WJGN",
+          "description": "5 Team Valor Die Cut Sticker",
+          "destination": null,
+          "dispute": null,
+          "failure_code": null,
+          "failure_message": null,
+          "fraud_details": {},
+          "invoice": null,
+          "livemode": false,
+          "metadata": {
+            "email": "raul_considine@leannonglover.co",
+            "sticker_quantity": "5",
+            "sticker_type": "valor"
+          },
+          "order": null,
+          "paid": true,
+          "receipt_email": "raul_considine@leannonglover.co",
+          "receipt_number": null,
+          "refunded": false,
+          "refunds": {
+            "object": "list",
+            "data": [],
+            "has_more": false,
+            "total_count": 0,
+            "url": "/v1/charges/ch_18WkvP4AnjI1zHWBF2cMs2Dl/refunds"
+          },
+          "shipping": null,
+          "source": {
+            "id": "card_18WkvO4AnjI1zHWBUbkEbVbc",
+            "object": "card",
+            "address_city": null,
+            "address_country": null,
+            "address_line1": null,
+            "address_line1_check": null,
+            "address_line2": null,
+            "address_state": null,
+            "address_zip": null,
+            "address_zip_check": null,
+            "brand": "Visa",
+            "country": "US",
+            "customer": "cus_8oNgTDxdx0WJGN",
+            "cvc_check": "pass",
+            "dynamic_last4": null,
+            "exp_month": 7,
+            "exp_year": 2017,
+            "fingerprint": "GuemeI8uOeJZ5eck",
+            "funding": "credit",
+            "last4": "4242",
+            "metadata": {},
+            "name": null,
+            "tokenization_method": null
+          },
+          "source_transfer": null,
+          "statement_descriptor": "Team Valor Stickers",
+          "status": "succeeded"
+        }
+    http_version: 
+  recorded_at: Wed, 13 Jul 2016 10:49:06 GMT
+recorded_with: VCR 3.0.3
