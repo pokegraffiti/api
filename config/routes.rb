@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  get 'utility/stats'
 
-  resources :orders, only: [:create]
+  resources :orders, only: [:create] do
+    get 'stats', on: :collection
+  end
 end
