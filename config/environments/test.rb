@@ -33,4 +33,7 @@ Rails.application.configure do
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
+
+  ENV['STRIPE_PUBLISHABLE_KEY'] = ENV.fetch('STRIPE_PUBLISHABLE_KEY', 'STRIPE_PUBLISHABLE_KEY')
+  ENV['STRIPE_SECRET_KEY']      = ENV.fetch('STRIPE_SECRET_KEY', 'STRIPE_SECRET_KEY')
 end

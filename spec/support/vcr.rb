@@ -9,7 +9,8 @@ VCR.configure do |config|
   config.configure_rspec_metadata!
   # config.ignore_hosts 'codeclimate.com'
 
-  # config.filter_sensitive_data('KEY') { ENV['KEY'] }
+  config.filter_sensitive_data('STRIPE_PUBLISHABLE_KEY') { ENV['STRIPE_PUBLISHABLE_KEY'] }
+  config.filter_sensitive_data('STRIPE_SECRET_KEY')      { ENV['STRIPE_SECRET_KEY'] }
 end
 
 RSpec.configure do |config|

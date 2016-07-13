@@ -12,6 +12,7 @@ gem 'jbuilder', '~> 2.5'
 
 # extensions
 gem 'rack-cors'
+gem 'stripe'
 
 group :development do
   gem 'listen'
@@ -36,6 +37,7 @@ end
 group :development, :test do
   gem 'dotenv-rails'
 
+  gem 'rails-controller-testing'
   gem 'rspec-rails'
   gem 'factory_girl_rails'
 
