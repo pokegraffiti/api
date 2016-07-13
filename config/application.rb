@@ -20,5 +20,10 @@ module Pokegraffiti
   class Application < Rails::Application
     config.api_only = true
     config.active_record.primary_key = :uuid
+    config.active_record.raise_in_transactional_callbacks = true
+    Jbuilder.key_format camelize: :lower
+
+    config.middleware.delete Rack::Sendfile
+    config.middleware.delete ActionDispatch::Static
   end
 end
