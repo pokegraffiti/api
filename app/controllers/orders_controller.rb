@@ -15,9 +15,9 @@ class OrdersController < ApplicationController
   # GET /orders/stats
   def stats
     total_count   = Order.sum(:sticker_quantity).to_f
-    team_instinct = [Order.team_instinct.sum(:sticker_quantity).to_f, 1.0].max / [total_count, 1.0]
-    team_mystic   = [Order.team_mystic.sum(:sticker_quantity).to_f,   1.0].max / [total_count, 1.0]
-    team_valor    = [Order.team_valor.sum(:sticker_quantity).to_f,    1.0].max / [total_count, 1.0]
+    team_instinct = [Order.team_instinct.sum(:sticker_quantity).to_f, 1.0].max / [total_count, 1.0].max
+    team_mystic   = [Order.team_mystic.sum(:sticker_quantity).to_f,   1.0].max / [total_count, 1.0].max
+    team_valor    = [Order.team_valor.sum(:sticker_quantity).to_f,    1.0].max / [total_count, 1.0].max
     render json: {
       instinct: team_instinct,
       mystic: team_mystic,
