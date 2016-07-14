@@ -10,10 +10,9 @@ RSpec.describe StripeOrder, type: :service do
     end
     let(:order) { build(:order, stripe_order_id: nil) }
     let(:stripe_params) do
-      { token: stripe_token.id, shipping_address: {
-        name: 'Frank',
-        line1: '45 Plumb Branch Road New Lenox, IL 60451'
-      } }
+      { token: stripe_token.id,
+        shipping_name: 'Frank',
+        shipping_address_line1: '45 Plumb Branch Road New Lenox, IL 60451' }
     end
 
     it 'creates a charge' do

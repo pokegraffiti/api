@@ -9,7 +9,7 @@ class StripeOrder
   end
 
   def self.authorize(order, stripe_params)
-    stripe_customer = Stripe::Customer.create(email: order.email, source: stripe_params[:token])
+    stripe_customer = Stripe::Customer.create(email: order.email, source: stripe_params.dig(:token))
     Stripe::Order.create(
       currency: 'usd',
       customer: stripe_customer,
@@ -21,14 +21,14 @@ class StripeOrder
         }
       ],
       shipping: {
-        name: stripe_params.dig(:shipping_address, :name),
+        name: stripe_params.dig(:shipping_name),
         address: {
-          line1: stripe_params.dig(:shipping_address, :line1),
-          line2: stripe_params.dig(:shipping_address, :line2),
-          city: stripe_params.dig(:shipping_address, :city),
-          state: stripe_params.dig(:shipping_address, :state),
-          country: stripe_params.dig(:shipping_address, :country),
-          postal_code: stripe_params.dig(:shipping_address, :postal_code)
+          line1: stripe_params.dig(:shipping_address_line1),
+          line2: stripe_params.dig(:shipping_address_line2),
+          city: stripe_params.dig(:shipping_address_city),
+          state: stripe_params.dig(:shipping_address_state),
+          country: stripe_params.dig(:shipping_address_country),
+          postal_code: stripe_params.dig(:shipping_address_zip)
         }
       }
     )

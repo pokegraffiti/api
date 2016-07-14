@@ -7,8 +7,7 @@ RSpec.describe OrdersController, type: :controller do
       email: Faker::Internet.email,
       sticker_type: 'valor',
       sticker_quantity: 5,
-      token: 'STRIPE_TOKEN',
-      shipping_address: {}
+      token: 'STRIPE_TOKEN'
     }
   end
 
@@ -17,8 +16,7 @@ RSpec.describe OrdersController, type: :controller do
       email: nil,
       sticker_type: 'valor',
       sticker_quantity: 5,
-      token: 'STRIPE_TOKEN',
-      shipping_address: {}
+      token: 'STRIPE_TOKEN'
     }
   end
 
