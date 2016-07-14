@@ -14,6 +14,9 @@ gem 'jbuilder', '~> 2.5'
 gem 'rack-cors'
 gem 'stripe'
 
+# error handing/reporting
+gem 'airbrake', '~> 5.4'
+
 group :development do
   gem 'listen'
 
