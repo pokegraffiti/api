@@ -24,7 +24,7 @@ RSpec.describe OrdersController, type: :controller do
 
   describe 'POST #create' do
     before(:each) do
-      allow(StripeCharge).to receive(:authorize).and_return(OpenStruct.new(id: 'CHARGE_ID'))
+      allow(StripeOrder).to receive(:authorize).and_return(OpenStruct.new(id: 'CHARGE_ID'))
     end
 
     context 'with valid params' do
