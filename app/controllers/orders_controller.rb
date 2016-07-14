@@ -6,8 +6,9 @@ class OrdersController < ApplicationController
     @order.stripe_order_id = StripeOrder.authorize(@order, stripe_params.to_h).id
     @order.save!
     head :created
-  rescue
-    # TODO: Airbreaks
+  rescue StandardError => error
+    logger.error error.message
+    logger.error error.backtrace.join("\n")
     head :unprocessable_entity
   end
 
