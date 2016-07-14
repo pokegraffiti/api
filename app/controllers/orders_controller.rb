@@ -3,13 +3,12 @@ class OrdersController < ApplicationController
   # POST /orders.json
   def create
     @order = Order.new(order_params)
-    @order.stripe_order_id = StripeOrder.authorize(@order, stripe_params).id
-
-    if @order.save
-      head :created
-    else
-      head :unprocessable_entity
-    end
+    @order.stripe_order_id = StripeOrder.authorize(@order, stripe_params.to_h).id
+    @order.save!
+    head :created
+  rescue
+    # TODO: Airbreaks
+    head :unprocessable_entity
   end
 
   # GET /orders/stats
@@ -32,6 +31,15 @@ class OrdersController < ApplicationController
   end
 
   def stripe_params
-    params.require(:order).permit(:token, :shipping_address)
+    params.require(:order).permit(
+      :token,
+      :shipping_name,
+      :shipping_address_line1,
+      :shipping_address_line2,
+      :shipping_address_city,
+      :shipping_address_state,
+      :shipping_address_country,
+      :shipping_address_zip
+    )
   end
 end

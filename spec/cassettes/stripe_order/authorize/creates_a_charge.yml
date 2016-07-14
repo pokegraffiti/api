@@ -33,7 +33,7 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Thu, 14 Jul 2016 03:47:48 GMT
+      - Thu, 14 Jul 2016 05:52:49 GMT
       Content-Type:
       - application/json
       Content-Length:
@@ -51,7 +51,7 @@ http_interactions:
       Cache-Control:
       - no-cache, no-store
       Request-Id:
-      - req_8oe7CX7fnJS1g2
+      - req_8og8di9tVUyWoV
       Stripe-Version:
       - '2016-07-06'
       Strict-Transport-Security:
@@ -60,10 +60,10 @@ http_interactions:
       encoding: UTF-8
       string: |
         {
-          "id": "tok_18X0pE4AnjI1zHWBFqQjdzyO",
+          "id": "tok_18X2mD4AnjI1zHWBmvbuOgpz",
           "object": "token",
           "card": {
-            "id": "card_18X0pE4AnjI1zHWBPxDzkKXy",
+            "id": "card_18X2mD4AnjI1zHWB2ZPVmK7j",
             "object": "card",
             "address_city": null,
             "address_country": null,
@@ -87,19 +87,19 @@ http_interactions:
             "tokenization_method": null
           },
           "client_ip": "50.131.61.23",
-          "created": 1468468068,
+          "created": 1468475569,
           "livemode": false,
           "type": "card",
           "used": false
         }
     http_version: 
-  recorded_at: Thu, 14 Jul 2016 03:47:48 GMT
+  recorded_at: Thu, 14 Jul 2016 05:52:48 GMT
 - request:
     method: post
     uri: https://api.stripe.com/v1/customers
     body:
       encoding: UTF-8
-      string: email=waylon%40fadel.info&source=tok_18X0pE4AnjI1zHWBFqQjdzyO
+      string: email=gregoria%40lang.info&source=tok_18X2mD4AnjI1zHWBmvbuOgpz
     headers:
       Accept:
       - "*/*"
@@ -116,7 +116,7 @@ http_interactions:
         Shadow-Cat.local 15.5.0 Darwin Kernel Version 15.5.0: Tue Apr 19 18:36:36
         PDT 2016; root:xnu-3248.50.21~8/RELEASE_X86_64 x86_64","hostname":"Shadow-Cat.local"}'
       Content-Length:
-      - '61'
+      - '62'
       Host:
       - api.stripe.com
   response:
@@ -127,11 +127,11 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Thu, 14 Jul 2016 03:47:48 GMT
+      - Thu, 14 Jul 2016 05:52:49 GMT
       Content-Type:
       - application/json
       Content-Length:
-      - '1394'
+      - '1395'
       Connection:
       - keep-alive
       Access-Control-Allow-Credentials:
@@ -145,7 +145,7 @@ http_interactions:
       Cache-Control:
       - no-cache, no-store
       Request-Id:
-      - req_8oe7OnnsPpn7pF
+      - req_8og8XJN7T3xuv9
       Stripe-Version:
       - '2016-07-06'
       Strict-Transport-Security:
@@ -154,16 +154,16 @@ http_interactions:
       encoding: UTF-8
       string: |
         {
-          "id": "cus_8oe7DAc6y1F1mx",
+          "id": "cus_8og87XK4Rq02X6",
           "object": "customer",
           "account_balance": 0,
-          "created": 1468468068,
+          "created": 1468475569,
           "currency": null,
-          "default_source": "card_18X0pE4AnjI1zHWBPxDzkKXy",
+          "default_source": "card_18X2mD4AnjI1zHWB2ZPVmK7j",
           "delinquent": false,
           "description": null,
           "discount": null,
-          "email": "waylon@fadel.info",
+          "email": "gregoria@lang.info",
           "livemode": false,
           "metadata": {},
           "shipping": null,
@@ -171,7 +171,7 @@ http_interactions:
             "object": "list",
             "data": [
               {
-                "id": "card_18X0pE4AnjI1zHWBPxDzkKXy",
+                "id": "card_18X2mD4AnjI1zHWB2ZPVmK7j",
                 "object": "card",
                 "address_city": null,
                 "address_country": null,
@@ -183,7 +183,7 @@ http_interactions:
                 "address_zip_check": null,
                 "brand": "Visa",
                 "country": "US",
-                "customer": "cus_8oe7DAc6y1F1mx",
+                "customer": "cus_8og87XK4Rq02X6",
                 "cvc_check": "pass",
                 "dynamic_last4": null,
                 "exp_month": 7,
@@ -198,18 +198,18 @@ http_interactions:
             ],
             "has_more": false,
             "total_count": 1,
-            "url": "/v1/customers/cus_8oe7DAc6y1F1mx/sources"
+            "url": "/v1/customers/cus_8og87XK4Rq02X6/sources"
           },
           "subscriptions": {
             "object": "list",
             "data": [],
             "has_more": false,
             "total_count": 0,
-            "url": "/v1/customers/cus_8oe7DAc6y1F1mx/subscriptions"
+            "url": "/v1/customers/cus_8og87XK4Rq02X6/subscriptions"
           }
         }
     http_version: 
-  recorded_at: Thu, 14 Jul 2016 03:47:49 GMT
+  recorded_at: Thu, 14 Jul 2016 05:52:49 GMT
 - request:
     method: get
     uri: https://api.stripe.com/v1/products
@@ -241,7 +241,7 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Thu, 14 Jul 2016 03:47:49 GMT
+      - Thu, 14 Jul 2016 05:52:50 GMT
       Content-Type:
       - application/json
       Content-Length:
@@ -259,7 +259,7 @@ http_interactions:
       Cache-Control:
       - no-cache, no-store
       Request-Id:
-      - req_8oe7uMUpW61UIV
+      - req_8og8rRTqB2kT0z
       Stripe-Version:
       - '2016-07-06'
       Strict-Transport-Security:
@@ -413,13 +413,13 @@ http_interactions:
           "url": "/v1/products"
         }
     http_version: 
-  recorded_at: Thu, 14 Jul 2016 03:47:49 GMT
+  recorded_at: Thu, 14 Jul 2016 05:52:49 GMT
 - request:
     method: post
     uri: https://api.stripe.com/v1/orders
     body:
       encoding: UTF-8
-      string: currency=usd&customer=cus_8oe7DAc6y1F1mx&items[][parent]=sku_8oe6ZiYP4yRfVx&items[][quantity]=5&items[][type]=sku&shipping[address][line1]=45+Plumb+Branch+Road+New+Lenox%2C+IL+60451&shipping[name]=Frank
+      string: currency=usd&customer=cus_8og87XK4Rq02X6&items[][parent]=sku_8oe6ZiYP4yRfVx&items[][quantity]=5&items[][type]=sku&shipping[address][line1]=45+Plumb+Branch+Road+New+Lenox%2C+IL+60451&shipping[name]=Frank
     headers:
       Accept:
       - "*/*"
@@ -447,11 +447,11 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Thu, 14 Jul 2016 03:47:49 GMT
+      - Thu, 14 Jul 2016 05:52:50 GMT
       Content-Type:
       - application/json
       Content-Length:
-      - '1365'
+      - '1361'
       Connection:
       - keep-alive
       Access-Control-Allow-Credentials:
@@ -465,7 +465,7 @@ http_interactions:
       Cache-Control:
       - no-cache, no-store
       Request-Id:
-      - req_8oe7zkR05bS5Pt
+      - req_8og8mLvYICVAf9
       Stripe-Version:
       - '2016-07-06'
       Strict-Transport-Security:
@@ -474,17 +474,17 @@ http_interactions:
       encoding: UTF-8
       string: |
         {
-          "id": "or_18X0pF4AnjI1zHWBTgY5SkZd",
+          "id": "or_18X2mE4AnjI1zHWBrAyFLKN1",
           "object": "order",
-          "amount": 2750,
+          "amount": 3025,
           "amount_returned": null,
           "application": null,
           "application_fee": null,
           "charge": null,
-          "created": 1468468069,
+          "created": 1468475570,
           "currency": "usd",
-          "customer": "cus_8oe7DAc6y1F1mx",
-          "email": "waylon@fadel.info",
+          "customer": "cus_8og87XK4Rq02X6",
+          "email": "gregoria@lang.info",
           "items": [
             {
               "object": "order_item",
@@ -497,9 +497,9 @@ http_interactions:
             },
             {
               "object": "order_item",
-              "amount": 0,
+              "amount": 275,
               "currency": "usd",
-              "description": "Taxes (included)",
+              "description": "Sales Tax",
               "parent": null,
               "quantity": null,
               "type": "tax"
@@ -512,7 +512,7 @@ http_interactions:
             "data": [],
             "has_more": false,
             "total_count": 0,
-            "url": "/v1/order_returns?order=or_18X0pF4AnjI1zHWBTgY5SkZd"
+            "url": "/v1/order_returns?order=or_18X2mE4AnjI1zHWBrAyFLKN1"
           },
           "selected_shipping_method": null,
           "shipping": {
@@ -532,8 +532,8 @@ http_interactions:
           "shipping_methods": [],
           "status": "created",
           "status_transitions": null,
-          "updated": 1468468069
+          "updated": 1468475570
         }
     http_version: 
-  recorded_at: Thu, 14 Jul 2016 03:47:49 GMT
+  recorded_at: Thu, 14 Jul 2016 05:52:49 GMT
 recorded_with: VCR 3.0.3
