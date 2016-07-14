@@ -3,8 +3,7 @@ class OrdersController < ApplicationController
   # POST /orders.json
   def create
     @order = Order.new(order_params)
-    charge = StripeCharge.authorize(@order, stripe_params)
-    @order.stripe_charge_id = charge.id
+    @order.stripe_order_id = StripeOrder.authorize(@order, stripe_params).id
 
     if @order.save
       head :created
