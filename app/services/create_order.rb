@@ -14,7 +14,7 @@ class CreateOrder
 
       # Order Details
       sticker_type:     params[:sticker_type],
-      sticker_quantity: params[:sticker_quantity],
+      sticker_quantity: params[:sticker_quantity].to_i,
       sticker_price:    sticker_price(params[:sticker_quantity])
     )
   end
@@ -52,7 +52,7 @@ class CreateOrder
   end
 
   def self.sticker_price(sticker_quantity)
-    case sticker_quantity
+    case sticker_quantity.to_i
     when 1
       550 # 1.10 per sticker, 5 per sku
     when 2
