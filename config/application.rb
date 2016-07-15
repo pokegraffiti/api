@@ -18,11 +18,6 @@ Bundler.require(*Rails.groups)
 
 module Pokegraffiti
   class Application < Rails::Application
-    config.api_only = true
     config.active_record.primary_key = :uuid
-    Jbuilder.key_format camelize: :lower
-
-    config.middleware.delete Rack::Sendfile
-    config.middleware.delete ActionDispatch::Static
   end
 end

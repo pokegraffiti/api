@@ -1,0 +1,112 @@
+<% environment.context_class.instance_eval { include Rails.application.routes.url_helpers } %>
+$(document).on('turbolinks:load', function() {
+    var pack_order = function(stripe_token, args) {
+        var order = new Object();
+        order.stripe_token = stripe_token.id;
+        order.email = stripe_token.email;
+        order.sticker_type = $('#order-options').attr('team');
+        order.sticker_quantity = parseInt($('#order-options').attr('quantity'));
+
+        order.shipping_name = args.shipping_name;
+        order.shipping_address_line1 = args.shipping_address_line1
+        order.shipping_address_line2 = args.shipping_address_line2
+        order.shipping_address_city = args.shipping_address_city
+        order.shipping_address_state = args.shipping_address_state
+        order.shipping_address_country = args.shipping_address_country
+        order.shipping_address_zip = args.shipping_address_zip
+
+        return order;
+    }
+
+    var setup_order = function(team) {
+        quantity = parseInt($("#" + team + "-quantity").val());
+        $('#order-options').attr('team', team)
+        $('#order-options').attr('quantity', quantity)
+
+        var order = new Object();
+        order.team = team;
+        order.quantity = quantity;
+        order.shipping_cost = 47;
+        order.tax_rate = 0.08;
+
+        switch (quantity) {
+            case 1:
+                order.sticker_price = 550;
+                break;
+            case 2:
+                order.sticker_price = 525;
+                break;
+            case 4:
+                order.sticker_price = 500;
+                break;
+            default:
+                order.sticker_price = 550;
+        }
+
+        order.total_price = (order.sticker_price * order.quantity);
+        order.total_price *= (1 + order.tax_rate);
+        order.total_price += order.shipping_cost;
+
+        return order;
+    }
+
+    var handler = StripeCheckout.configure({
+        key: "<%= Rails.configuration.stripe[:publishable_key] %>",
+        name: 'PokeGraffiti',
+        locale: 'auto',
+        zipCode: true,
+        currency: 'usd',
+        shippingAddress: true,
+        allowRememberMe: true,
+        bitcoin: true,
+        token: function(token, args) {
+            $("body").append('<div class="loading">Loading&#8230;</div>');
+            var order = pack_order(token, args);
+            $.post({
+              url: "<%= orders_path %>",
+              timeout: 10000
+            }, {
+                order: order
+            }).done(function(data) {
+              Turbolinks.visit(data.redirect_url)
+            }).fail(function(){
+              Turbolinks.visit("<%= failure_path %>")
+            });
+        }
+    });
+
+    $('#checkout_instinct').on('click', function(e) {
+        var order = setup_order('instinct');
+        handler.open({
+            image: "<%= image_path('instinct-thumb.jpg') %>",
+            description: 'Team Instinct Stickers',
+            amount: order.total_price
+        });
+        e.preventDefault();
+    });
+
+    $('#checkout_valor').on('click', function(e) {
+        var order = setup_order('valor');
+        handler.open({
+            image: "<%= image_path('valor-thumb.jpg') %>",
+            description: 'Team Valor Stickers',
+            amount: order.total_price
+        });
+        e.preventDefault();
+    });
+
+    $('#checkout_mystic').on('click', function(e) {
+        var order = setup_order('mystic');
+        handler.open({
+            image: "<%= image_path('mystic-thumb.jpg') %>",
+            description: 'Team Mystic Stickers',
+            amount: order.total_price
+        });
+        e.preventDefault();
+    });
+
+    // Close Checkout on page navigation:
+    $(window).on('popstate', function() {
+        handler.close();
+    });
+});
