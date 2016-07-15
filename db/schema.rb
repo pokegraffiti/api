@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160714030722) do
+ActiveRecord::Schema.define(version: 20160714235932) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,8 +20,16 @@ ActiveRecord::Schema.define(version: 20160714030722) do
     t.string   "email"
     t.integer  "sticker_type"
     t.integer  "sticker_quantity"
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
-    t.string   "stripe_order_id"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+    t.string   "stripe_charge_id"
+    t.string   "stripe_customer_id"
+    t.integer  "status"
+    t.integer  "shipping_cost"
+    t.integer  "sticker_price"
+    t.integer  "sales_tax"
+    t.text     "notes"
+    t.json     "shipping_address"
   end
+
 end
