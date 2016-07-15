@@ -27,6 +27,7 @@ gem 'high_voltage', '~> 3.0.0'
 
 # error handing/reporting
 gem 'airbrake', '~> 5.4'
+gem 'newrelic_rpm'
 
 group :development do
   gem 'listen'
