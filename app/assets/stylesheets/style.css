@@ -1,0 +1,19 @@
+.pricing-table-2 {
+  background: image-url("background.jpg") no-repeat center fixed;
+  background-size: cover;
+  background-color: #394149;
+}
+
+.pricing-table-2 h1 {
+  color: white;
+  font-weight: bold;
+}
+
+.pricing-table-2 .price-block header {
+  background: #6b7177;
+  padding: 2em;
+}
+
+.basic-1-11 {
+  background-color: #1d1e1f;
+}

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>PokeGraffiti</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="pokemon, pokemon go, mystic, valor, instinct" />
+    <meta name="description" content="It's Time to Show the World Where You Stand!" />
+
+    <link rel="shortcut icon" href="ico/favicon.png">
+
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <script src="https://checkout.stripe.com/checkout.js"></script>
+  </head>
+
+  <body>
+    <%= yield %>
+  </body>
+</html>
