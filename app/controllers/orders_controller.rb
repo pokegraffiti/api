@@ -3,12 +3,12 @@ class OrdersController < ApplicationController
   # POST /orders.json
   def create
     @order = CreateOrder.call!(order_params)
-    head :created
+    render json: { redirect_url: success_path }, status: :created
   rescue StandardError => error
     notify_airbrake(error)
     logger.error error.message
     logger.error error.backtrace.join("\n")
-    head :unprocessable_entity
+    render json: { redirect_url: failure_path }, status: :unprocessable_entity
   end
 
   # GET /orders/stats
