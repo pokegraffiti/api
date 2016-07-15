@@ -5,7 +5,7 @@ test:
   url: <%= ENV['DATABASE_TEST_URL'] %>
 
 staging:
-  url: <%= ENV['DATABASE_STAGING_URL'] %>
+  url: <%= ENV['DATABASE_URL'] %>
 
 production:
   url: <%= ENV['DATABASE_URL'] %>
