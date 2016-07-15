@@ -7,11 +7,26 @@ gem 'puma', '~> 3.0'
 # datastore
 gem 'pg', '~> 0.18'
 
+# assets
+gem 'sass-rails', '~> 5.0'
+gem 'uglifier', '>= 1.3.0'
+gem 'bootstrap-sass', '~> 3.3.6'
+gem 'font-awesome-sass', '~> 4.6.2'
+
+# javascript frontend
+gem 'jquery-rails'
+gem 'turbolinks', '~> 5'
+
 # javascript backend
 gem 'jbuilder', '~> 2.5'
 
 # extensions
 gem 'rack-cors'
+gem 'stripe'
+gem 'high_voltage', '~> 3.0.0'
+
+# error handing/reporting
+gem 'airbrake', '~> 5.4'
 
 group :development do
   gem 'listen'
@@ -36,6 +51,7 @@ end
 group :development, :test do
   gem 'dotenv-rails'
 
+  gem 'rails-controller-testing'
   gem 'rspec-rails'
   gem 'factory_girl_rails'
 

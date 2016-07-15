@@ -3,7 +3,7 @@ require 'simplecov'
 require 'pry'
 
 SimpleCov.formatter = SimpleCov::Formatter::HTMLFormatter
-SimpleCov.minimum_coverage 100
+SimpleCov.minimum_coverage 80
 SimpleCov.refuse_coverage_drop
 SimpleCov.start 'rails'
 
