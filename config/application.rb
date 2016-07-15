@@ -18,7 +18,6 @@ Bundler.require(*Rails.groups)
 
 module Pokegraffiti
   class Application < Rails::Application
-    config.api_only = true
     config.active_record.primary_key = :uuid
   end
 end

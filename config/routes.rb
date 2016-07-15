@@ -1,3 +1,9 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+
+  get '/success' => 'high_voltage/pages#show', id: 'success'
+  get '/failure' => 'high_voltage/pages#show', id: 'failure'
+
+  resources :orders, only: [:create] do
+    get 'stats', on: :collection
+  end
 end
