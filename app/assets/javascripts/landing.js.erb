@@ -58,7 +58,6 @@ $(document).on('turbolinks:load', function() {
         currency: 'usd',
         shippingAddress: true,
         allowRememberMe: true,
-        bitcoin: true,
         token: function(token, args) {
             $("body").append('<div class="loading">Loading&#8230;</div>');
             var order = pack_order(token, args);
