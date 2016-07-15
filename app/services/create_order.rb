@@ -31,7 +31,7 @@ class CreateOrder
   def self.create_stripe_customer(params)
     Stripe::Customer.create(
       email: params[:email],
-      source: params[:token],
+      source: params[:stripe_token],
       shipping: {
         name: params[:shipping_name],
         address: parse_shipping_address(params).except(:name)
