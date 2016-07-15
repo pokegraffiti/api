@@ -2,11 +2,10 @@
 class OrdersController < ApplicationController
   # POST /orders.json
   def create
-    @order = Order.new(order_params)
-    @order.stripe_order_id = StripeOrder.authorize(@order, stripe_params.to_h).id
-    @order.save!
+    @order = CreateOrder.call!(order_params)
     head :created
   rescue StandardError => error
+    notify_airbrake(error)
     logger.error error.message
     logger.error error.backtrace.join("\n")
     head :unprocessable_entity
@@ -28,19 +27,10 @@ class OrdersController < ApplicationController
   private
 
   def order_params
-    params.require(:order).permit(:email, :sticker_type, :sticker_quantity)
-  end
-
-  def stripe_params
     params.require(:order).permit(
-      :token,
-      :shipping_name,
-      :shipping_address_line1,
-      :shipping_address_line2,
-      :shipping_address_city,
-      :shipping_address_state,
-      :shipping_address_country,
-      :shipping_address_zip
+      :email, :sticker_type, :sticker_quantity, :stripe_token, :shipping_name,
+      :shipping_address_line1, :shipping_address_line2, :shipping_address_city,
+      :shipping_address_state, :shipping_address_country, :shipping_address_zip
     )
   end
 end

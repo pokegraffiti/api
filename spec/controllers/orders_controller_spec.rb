@@ -6,32 +6,19 @@ RSpec.describe OrdersController, type: :controller do
     {
       email: Faker::Internet.email,
       sticker_type: 'valor',
-      sticker_quantity: 5,
+      sticker_quantity: 1,
       token: 'STRIPE_TOKEN'
     }
   end
 
-  let(:invalid_attributes) do
-    {
-      email: nil,
-      sticker_type: 'valor',
-      sticker_quantity: 5,
-      token: 'STRIPE_TOKEN'
-    }
-  end
+  let(:invalid_attributes) { {} }
 
   describe 'POST #create' do
     before(:each) do
-      allow(StripeOrder).to receive(:authorize).and_return(OpenStruct.new(id: 'CHARGE_ID'))
+      allow(CreateOrder).to receive(:call!).and_return(create(:order))
     end
 
     context 'with valid params' do
-      it 'creates a new Order' do
-        expect do
-          post :create, params: { order: valid_attributes }
-        end.to change(Order, :count).by(1)
-      end
-
       it 'assigns a newly created order as @order' do
         post :create, params: { order: valid_attributes }
         expect(assigns(:order)).to be_a(Order)
