@@ -60,11 +60,17 @@ $(document).on('turbolinks:load', function() {
         allowRememberMe: true,
         bitcoin: true,
         token: function(token, args) {
+            $("body").append('<div class="loading">Loading&#8230;</div>');
             var order = pack_order(token, args);
-            var jqxhr = $.post("<%= orders_path %>", {
+            $.post({
+              url: "<%= orders_path %>",
+              timeout: 10000
+            }, {
                 order: order
-            }, function() {
-                console.log('CREATED!')
+            }).done(function(data) {
+              Turbolinks.visit(data.redirect_url)
+            }).fail(function(){
+              Turbolinks.visit("<%= failure_path %>")
             });
         }
     });

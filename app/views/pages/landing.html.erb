@@ -1,5 +1,5 @@
 <%= javascript_include_tag "https://checkout.stripe.com/checkout.js" %>
-<div id="order-options" team="" quantity=""/>
+<div id="order-options" team="" quantity=""> </div>
 
 <section class="content-block pricing-table-2">
     <div class="container">
@@ -123,16 +123,9 @@
 
             <div class="col-md-3 col-sm-6 col-xs-12">
                 <h2>Support</h2>
-                <p>Please contact us at
-                    <a href="mailto:pokegraffiti@gmail.com?Subject=Support" target="_top">pokegraffiti@gmail.com</a>.</p>
+                <p>Please contact us at <%= mail_to 'pokegraffiti@gmail.com' %>.</p>
             </div>
 
         </div>
     </div>
 </section>
-<div class="copyright-bar bg-black">
-    <div class="container">
-        <p class="pull-left small">PokeGraffiti</p>
-        <p class="pull-right small">Made with Rare Candies</p>
-    </div>
-</div>
