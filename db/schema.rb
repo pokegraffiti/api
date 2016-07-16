@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(version: 20160714235932) do
   enable_extension "plpgsql"
   enable_extension "uuid-ossp"
 
-  create_table "orders", force: :cascade do |t|
+  create_table "orders", id: :uuid, default: -> { "uuid_generate_v4()" }, force: :cascade do |t|
     t.string   "email"
     t.integer  "sticker_type"
     t.integer  "sticker_quantity"
