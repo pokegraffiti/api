@@ -4,12 +4,16 @@
             <div class="col-md-offset-2 col-md-8">
                 <div class="panel panel-default">
                     <div class="panel-body">
-                        <h1 class="text-center">Awesome!</h1>
-                        <p class="text-center">Your order has been submitted.</p>
+                        <% if @order.referrals.count.zero? %>
+                          <h1 class="text-center">Awesome!</h1>
+                          <p class="text-center">Your order has been submitted.</p>
+                        <% else %>
+                          <h2 class="text-center">You have <%= pluralize(@order.referrals.count, 'referral') %>! </h1>
+                        <% end %>
 
                         <hr>
 
-                        <p class="text-center">Now is your change to earn free stickers! For every 5 people you refer we will send you 5 free stickers, up to the size of your order. Simply share this link with the world.</p>
+                        <p class="text-center">Now is your change to earn free stickers! For every 5 people you refer we will send you 5 free stickers, up to the size of your order. Simply share this link with the world. Comeback to this page at anytime to check your progress.</p>
                         <div class="well well-sm"><%= root_url(ref: @order.referral_code) %></div>
 
                         <p class="text-center">
@@ -22,5 +26,6 @@
                 </div>
             </div>
         </div>
+
     </div>
 </section>
