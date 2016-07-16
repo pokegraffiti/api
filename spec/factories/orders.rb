@@ -8,5 +8,6 @@ FactoryGirl.define do
     sticker_type        { :valor }
     sticker_quantity    { 1 }
     sticker_price       { 500 }
+    referral_code       { SecureRandom.urlsafe_base64 }
   end
 end

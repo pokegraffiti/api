@@ -7,6 +7,10 @@ class CreateOrder
     Order.create!(
       status: :created,
 
+      # Referral System
+      referrer_code: params[:referred_by],
+      referral_code: SecureRandom.urlsafe_base64,
+
       # Customer Details
       email:              params[:email],
       stripe_customer_id: create_stripe_customer(params).id,
