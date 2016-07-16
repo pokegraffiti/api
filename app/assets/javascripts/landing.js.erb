@@ -77,7 +77,7 @@ $(document).on('turbolinks:load', function() {
                 Cookies.remove('referred_by');
                 Turbolinks.visit(data.redirect_url)
             }).fail(function() {
-                Turbolinks.visit("<%= failure_path %>")
+                Turbolinks.visit("<%= failure_orders_path %>")
             });
         }
     });

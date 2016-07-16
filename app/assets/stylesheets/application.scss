@@ -16,8 +16,14 @@
 @import "bootstrap";
 @import "font-awesome-sprockets";
 @import "font-awesome";
+@import "bootstrap-social";
 
 @import "basic-1";
 @import "pricing-tables-2";
 @import "style-library-1";
-@import "style"
+@import "style";
+
+.btn-reddit {
+  color: #000;
+  border: inherit;
+}
