@@ -8,11 +8,19 @@ class ApplicationController < ActionController::Base
 
   def bad_request(error)
     notify_airbrake(error)
-    render json: { error: error.message }, status: :bad_request
+
+    respond_to do |format|
+      format.html { render 'errors/bad_request', status: :not_found }
+      format.json { render json: { error: error.message }, status: :bad_request }
+    end
   end
 
   def record_not_found(error)
     notify_airbrake(error)
-    render json: { error: error.message }, status: :not_found
+
+    respond_to do |format|
+      format.html { render 'errors/not_found', status: :not_found }
+      format.json { render json: { error: error.message }, status: :not_found }
+    end
   end
 end
