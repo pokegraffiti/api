@@ -6,7 +6,10 @@ class CreateOrder
     validate!(params)
     Order.create!(
       status: :created,
-      referred_by: params[:referred_by],
+
+      # Referral System
+      referrer_code: params[:referred_by],
+      referral_code: SecureRandom.urlsafe_base64,
 
       # Customer Details
       email:              params[:email],

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160716025700) do
+ActiveRecord::Schema.define(version: 20160716030834) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -30,7 +30,9 @@ ActiveRecord::Schema.define(version: 20160716025700) do
     t.integer  "sales_tax"
     t.text     "notes"
     t.json     "shipping_address"
-    t.string   "referred_by"
+    t.string   "referrer_code"
+    t.string   "referral_code"
+    t.index ["referral_code"], name: "index_orders_on_referral_code", unique: true, using: :btree
   end
 
 end
