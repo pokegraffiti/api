@@ -13,7 +13,6 @@ addons:
   postgresql: '9.4'
 env:
   global:
-    - DATABASE_TEST_URL=postgres://postgres:@localhost/travis_ci_test?pool=5
-    - SECRET_KEY_BASE=secret_key
+    - DATABASE_URL=postgres://postgres:@localhost/travis_ci_test?pool=5
 notifications:
   email: false
