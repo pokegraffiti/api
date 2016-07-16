@@ -31,7 +31,6 @@ class OrdersController < ApplicationController
 
   # GET /orders/failure/
   def failure
-    fail
   end
 
   private
