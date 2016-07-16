@@ -3,12 +3,12 @@ class OrdersController < ApplicationController
   # POST /orders.json
   def create
     @order = CreateOrder.call!(order_params)
-    render json: { redirect_url: success_path(referral_code: @order.referral_code) }, status: :created
+    render json: { redirect_url: success_order_path(@order.referral_code) }, status: :created
   rescue StandardError => error
     notify_airbrake(error)
     logger.error error.message
     logger.error error.backtrace.join("\n")
-    render json: { redirect_url: failure_path }, status: :unprocessable_entity
+    render json: { redirect_url: failure_orders_path }, status: :unprocessable_entity
   end
 
   # GET /orders/stats
@@ -22,6 +22,15 @@ class OrdersController < ApplicationController
       mystic: team_mystic,
       valor: team_valor
     }, status: :ok
+  end
+
+  # GET /orders/:referral_code/success/
+  def success
+    @order = Order.find_by_referral_code(params[:id])
+  end
+
+  # GET /orders/failure/
+  def failure
   end
 
   private
