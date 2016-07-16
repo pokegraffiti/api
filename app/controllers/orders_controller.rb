@@ -3,7 +3,7 @@ class OrdersController < ApplicationController
   # POST /orders.json
   def create
     @order = CreateOrder.call!(order_params)
-    render json: { redirect_url: success_path }, status: :created
+    render json: { redirect_url: success_path(referral_code: @order.referral_code) }, status: :created
   rescue StandardError => error
     notify_airbrake(error)
     logger.error error.message
