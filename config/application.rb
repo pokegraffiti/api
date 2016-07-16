@@ -19,5 +19,6 @@ Bundler.require(*Rails.groups)
 module Pokegraffiti
   class Application < Rails::Application
     config.active_record.primary_key = :uuid
+    config.exceptions_app = self.routes
   end
 end
