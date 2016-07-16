@@ -1,9 +1,7 @@
 language: ruby
+cache: bundler
 rvm:
   - 2.3.1
-matrix:
-  allow_failures:
-    - rvm: ruby-head
 before_install:
   - export RUBY_VERSION=$(ruby --version)
 before_script:
