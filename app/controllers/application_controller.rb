@@ -10,7 +10,7 @@ class ApplicationController < ActionController::Base
     notify_airbrake(error)
 
     respond_to do |format|
-      format.html { render 'errors/bad_request', status: :not_found }
+      format.html { render 'errors/bad_request', status: :bad_request }
       format.json { render json: { error: error.message }, status: :bad_request }
     end
   end
