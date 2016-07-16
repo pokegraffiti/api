@@ -50,4 +50,26 @@ RSpec.describe OrdersController, type: :controller do
       expect(response).to have_http_status(:success)
     end
   end
+
+  describe 'GET #success' do
+    let(:order) { create(:order) }
+
+    it 'returns http success' do
+      get :success, params: { id: order.referral_code }
+      expect(response).to have_http_status(:success)
+    end
+
+    it 'assigns the created order as @order' do
+      get :success, params: { id: order.referral_code }
+      expect(assigns(:order)).to be_a(Order)
+      expect(assigns(:order)).to be_persisted
+    end
+  end
+
+  describe 'GET #failure' do
+    it 'returns http success' do
+      get :failure
+      expect(response).to have_http_status(:success)
+    end
+  end
 end
