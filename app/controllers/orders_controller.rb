@@ -26,7 +26,7 @@ class OrdersController < ApplicationController
 
   # GET /orders/:referral_code/success/
   def success
-    @order = Order.find_by_referral_code(params[:id])
+    @order = Order.find_by!(referral_code: params[:id])
   end
 
   # GET /orders/failure/
