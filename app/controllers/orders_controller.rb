@@ -28,7 +28,7 @@ class OrdersController < ApplicationController
 
   def order_params
     params.require(:order).permit(
-      :email, :sticker_type, :sticker_quantity, :stripe_token, :shipping_name,
+      :email, :referred_by, :sticker_type, :sticker_quantity, :stripe_token, :shipping_name,
       :shipping_address_line1, :shipping_address_line2, :shipping_address_city,
       :shipping_address_state, :shipping_address_country, :shipping_address_zip
     )

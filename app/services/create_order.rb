@@ -6,6 +6,7 @@ class CreateOrder
     validate!(params)
     Order.create!(
       status: :created,
+      referred_by: params[:referred_by],
 
       # Customer Details
       email:              params[:email],
