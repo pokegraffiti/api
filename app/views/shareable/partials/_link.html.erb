@@ -1,0 +1,7 @@
+<%
+  button_name = options[:button_name]
+  button_name = 'google' if button_name == 'google_plus'
+%>
+<a href="<%= options[:url] %>" target="_blank" class="btn btn-lg btn-social-icon btn-<%= button_name %>">
+  <span class="fa fa-<%= button_name %>"></span>
+</a>

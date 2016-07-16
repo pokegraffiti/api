@@ -1,0 +1,31 @@
+<section class="content-block full-page-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-offset-2 col-md-8">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <% if @order.referrals.count.zero? %>
+                          <h1 class="text-center">Awesome!</h1>
+                          <p class="text-center">Your order has been submitted.</p>
+                        <% else %>
+                          <h2 class="text-center">You have <%= pluralize(@order.referrals.count, 'referral') %>! </h1>
+                        <% end %>
+
+                        <hr>
+
+                        <p class="text-center">Now is your change to earn free stickers! For every 5 people you refer we will send you 5 free stickers, up to the size of your order. Simply share this link with the world. Comeback to this page at anytime to check your progress.</p>
+                        <div class="well well-sm"><%= root_url(ref: @order.referral_code) %></div>
+
+                        <p class="text-center">
+                            <%= render_shareable turbolinks: true, static_link: true, url: root_url(ref: @order.referral_code) %>
+                        </p>
+                    </div>
+                    <div class="panel-footer text-center">
+                        <small style="font-size: 50%;">Subject to availability. We reserves the right to change these terms and conditions at any time without prior notice. Fulfilment of the promotion is at our sole discretion. Promotion may be canceled without notice. A referral describes a completed order. While the displayed count is an estimate based on processing orders.</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>

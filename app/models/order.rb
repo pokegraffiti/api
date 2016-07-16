@@ -9,4 +9,7 @@ class Order < ApplicationRecord
   scope :team_instinct, -> { where(sticker_type: :instinct) }
   scope :team_mystic,   -> { where(sticker_type: :mystic) }
   scope :team_valor,    -> { where(sticker_type: :valor) }
+
+  has_one :referrer, class_name: 'Order', foreign_key: :referral_code, primary_key: :referrer_code
+  has_many :referrals, class_name: 'Order', foreign_key: :referrer_code, primary_key: :referral_code
 end
