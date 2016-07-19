@@ -1,23 +1,6 @@
-/*
-Template Name: Bootstrap Starter Kit - Basic Blocks 1
-Description: Business Startup & Prototyping HTML Framework
-Author: Theme Spirit
-Author URI: http://www.bootstrapstarterkit.com/
-
-Version: 1.0
-
-*/
-
-
-/* DEMO PAGE STYLES - YOU DON'T NEED TO COPY THESE */
-.demo-title h2 { margin: 0; color: #ffffff; }
-/* END OF DEMO STYLES */
-
-
-
 /*	BASIC STYLES
 /*----------------------------------------------------*/
-
+/*
 .basic-1-6 img {
 	margin: 40px auto 0 auto;
 }
@@ -44,7 +27,7 @@ Version: 1.0
 
 .basic-1-10  h2, .basic-1-10 p {
 	color: #ffffff;
-}
+}*/
 
 .basic-1-11 {
 	background-color: #193441;
@@ -53,7 +36,7 @@ Version: 1.0
 .basic-1-11  h2, .basic-1-11 p {
 	color: #ffffff;
 }
-
+/*
 .basic-1-12 {
 	background-color: #193441;
 }
@@ -181,7 +164,7 @@ Version: 1.0
 
 .basic-1-24 img {
 	margin: 60px auto 40px auto;
-}
+}*/
 
 
 
@@ -189,26 +172,21 @@ Version: 1.0
 /*----------------------------------------------------*/
 
 /* Small Devices, Tablets */
-@media only screen and (min-width : 768px) {
-	
-	
-	
-}
+/*@media only screen and (min-width : 768px) {
+
+
+
+}*/
 
 /* Medium Devices, Desktops */
-@media only screen and (min-width : 992px) {
-	
-	
-	
-}
+/*@media only screen and (min-width : 992px) {
+
+
+
+}*/
 
 /* Large Devices, Wide Screens */
-@media only screen and (min-width : 1200px) {
-	
-	
-	
-}
+/*@media only screen and (min-width : 1200px) {
 
 
-
-
+}*/

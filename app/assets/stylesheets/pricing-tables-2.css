@@ -1,20 +1,3 @@
-/*
-Template Name: Bootstrap Starter Kit - Pricing Tables 2
-Description: Business Startup & Prototyping HTML Framework
-Author: Theme Spirit
-Author URI: http://www.creativemarket.com/theme_spirit
-
-Version: 1.0
-
-*/
-
-
-/* DEMO PAGE STYLES - YOU DON'T NEED TO COPY THESE */
-.demo-title h2 { margin: 0; color: #ffffff; }
-/* END OF DEMO STYLES */
-
-
-
 /*	Pricing Table 2
 /*----------------------------------------------------*/
 
@@ -118,7 +101,7 @@ Version: 1.0
 }
 
 /* Ribbon & Colors */
-.ribbon {
+/*.ribbon {
 	position: absolute;
 	top: -4px;
 	right: 11px;
@@ -126,16 +109,16 @@ Version: 1.0
 	height: 82px;
 	overflow: hidden;
 	z-index: 10
-}
+}*/
 
-.red-hot { background: url("../images/red-hot.png") 0 0 no-repeat; }
+/*.red-hot { background: url("../images/red-hot.png") 0 0 no-repeat; }
 .best-value { background: url("../images/best-value.png") 0 0 no-repeat; }
 .super-cool { background: url("../images/super-cool.png") 0 0 no-repeat; }
 .new { background: url("../images/new.png") 0 0 no-repeat; }
 .premium { background: url("../images/premium.png") 0 0 no-repeat; }
 .exclusive { background: url("../images/exclusive.png") 0 0 no-repeat; }
 .popular { background: url("../images/popular.png") 0 0 no-repeat; }
-.five-stars { background: url("../images/five-stars.png") 0 0 no-repeat; }
+.five-stars { background: url("../images/five-stars.png") 0 0 no-repeat; }*/
 
 
 
@@ -143,22 +126,22 @@ Version: 1.0
 /*----------------------------------------------------*/
 
 /* Small Devices, Tablets */
-@media only screen and (min-width : 768px) {
+/*@media only screen and (min-width : 768px) {
 
 
 
-}
+}*/
 
 /* Medium Devices, Desktops */
-@media only screen and (min-width : 992px) {
+/*@media only screen and (min-width : 992px) {
 
 
 
-}
+}*/
 
 /* Large Devices, Wide Screens */
-@media only screen and (min-width : 1200px) {
+/*@media only screen and (min-width : 1200px) {
 
 
 
-}
+}*/
