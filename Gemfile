@@ -14,6 +14,7 @@ gem 'uglifier', '>= 1.3.0'
 gem 'bootstrap-sass', '~> 3.3.6'
 gem 'font-awesome-sass', '~> 4.6.2'
 gem 'shareable'
+gem 'sprockets-image_compressor'
 
 # javascript frontend
 gem 'jquery-rails'
