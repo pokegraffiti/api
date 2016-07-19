@@ -18,6 +18,7 @@ Bundler.require(*Rails.groups)
 
 module Pokegraffiti
   class Application < Rails::Application
+    config.middleware.use Rack::Deflater
     config.active_record.primary_key = :uuid
     config.exceptions_app = self.routes
   end
