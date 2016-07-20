@@ -60,9 +60,9 @@ class CreateOrder
     when 1
       550 # 1.10 per sticker, 5 per sku
     when 2
-      525 # 1.05 per sticker, 5 per sku
-    when 4
       500 # 1.00 per sticker, 5 per sku
+    when 4
+      450 # 0.90 per sticker, 5 per sku
     else
       raise "#{sticker_quantity} was out of range"
     end

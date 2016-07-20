@@ -37,13 +37,13 @@ RSpec.describe CreateOrder, type: :service do
       end
     end
     context 'when 2' do
-      it 'returns 525' do
-        expect(described_class.sticker_price(2)).to eql 525
+      it 'returns 500' do
+        expect(described_class.sticker_price(2)).to eql 500
       end
     end
     context 'when 4' do
-      it 'returns 500' do
-        expect(described_class.sticker_price(4)).to eql 500
+      it 'returns 450' do
+        expect(described_class.sticker_price(4)).to eql 450
       end
     end
     context 'when out of range' do
