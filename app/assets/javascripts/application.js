@@ -15,7 +15,6 @@
 //= require bootstrap-sprockets
 //= require turbolinks
 //= require js.cookie-2.1.2.min
-//= require_tree .
 
 (function($) {
     $.QueryString = (function(a) {

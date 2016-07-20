@@ -33,8 +33,8 @@ $(document).on('turbolinks:load', function() {
         var order = new Object();
         order.team = team;
         order.quantity = quantity;
-        order.shipping_cost = 47;
-        order.tax_rate = 0.08;
+        //order.shipping_cost = 47;
+        //order.tax_rate = 0.08;
 
         switch (quantity) {
             case 1:
@@ -51,8 +51,8 @@ $(document).on('turbolinks:load', function() {
         }
 
         order.total_price = (order.sticker_price * order.quantity);
-        order.total_price *= (1 + order.tax_rate);
-        order.total_price += order.shipping_cost;
+        //order.total_price *= (1 + order.tax_rate);
+        //order.total_price += order.shipping_cost;
 
         return order;
     }
