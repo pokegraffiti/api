@@ -164,3 +164,11 @@ body {
     color: #000;
     border: inherit;
 }
+.gallery-item-wrapper {
+  padding: 1.2em;
+}
+.gallery-image {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
