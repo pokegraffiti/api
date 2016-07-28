@@ -1,24 +1,8 @@
-# README
+# PokeGraffiti
+Weekend Project to sell Pokemon Go Inspired Stickers. Shutdown and redirected to: [https://www.stickermule.com/user/1070757983/stickers](https://www.stickermule.com/user/1070757983/stickers)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Screenshots
+![Landing Page](/docs/landing.png)
+![Success Page](/docs/success.png)
+![Error Page](/docs/failure.png)
+![404 Page](/docs/404.png)
